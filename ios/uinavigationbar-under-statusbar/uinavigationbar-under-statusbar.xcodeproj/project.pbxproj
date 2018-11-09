@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		EC461147219635BF00A4FB85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC461146219635BF00A4FB85 /* AppDelegate.swift */; };
 		EC461149219635BF00A4FB85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC461148219635BF00A4FB85 /* ViewController.swift */; };
-		EC46114C219635BF00A4FB85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC46114A219635BF00A4FB85 /* Main.storyboard */; };
 		EC46114E219635C000A4FB85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC46114D219635C000A4FB85 /* Assets.xcassets */; };
 		EC46115B21963FD000A4FB85 /* Constraid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC46115A21963FD000A4FB85 /* Constraid.framework */; };
+		ECBE80D92196525A00D682FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBE80D82196525A00D682FD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC461143219635BF00A4FB85 /* uinavigationbar-under-statusbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uinavigationbar-under-statusbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC461146219635BF00A4FB85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC461148219635BF00A4FB85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EC46114B219635BF00A4FB85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC46114D219635C000A4FB85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC461152219635C000A4FB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC46115A21963FD000A4FB85 /* Constraid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Constraid.framework; path = Carthage/Build/iOS/Constraid.framework; sourceTree = "<group>"; };
+		ECBE80D82196525A00D682FD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +58,9 @@
 			children = (
 				EC461146219635BF00A4FB85 /* AppDelegate.swift */,
 				EC461148219635BF00A4FB85 /* ViewController.swift */,
-				EC46114A219635BF00A4FB85 /* Main.storyboard */,
 				EC46114D219635C000A4FB85 /* Assets.xcassets */,
 				EC461152219635C000A4FB85 /* Info.plist */,
+				ECBE80D82196525A00D682FD /* LaunchScreen.storyboard */,
 			);
 			path = "uinavigationbar-under-statusbar";
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC46114E219635C000A4FB85 /* Assets.xcassets in Resources */,
-				EC46114C219635BF00A4FB85 /* Main.storyboard in Resources */,
+				ECBE80D92196525A00D682FD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,21 +169,11 @@
 			files = (
 				EC461149219635BF00A4FB85 /* ViewController.swift in Sources */,
 				EC461147219635BF00A4FB85 /* AppDelegate.swift in Sources */,
+				ECBE80D521964D2900D682FD /* NavigationBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EC46114A219635BF00A4FB85 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC46114B219635BF00A4FB85 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC461153219635C000A4FB85 /* Debug */ = {
