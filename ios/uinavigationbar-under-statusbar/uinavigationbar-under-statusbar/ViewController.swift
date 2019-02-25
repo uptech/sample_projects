@@ -3,8 +3,8 @@ import Constraid
 
 class ViewController: UIViewController {
 
-    private let navigationBarView: NavigationBarView = {
-        let nav = NavigationBarView(frame: .zero)
+    private let navigationBarView: UINavigationBar = {
+        let nav = UINavigationBar(frame: .zero)
 
         // Add items to the left and right of the navigation bar.
         // This isn't necessary to do but we wanted you to see something expected in the navigation bar
@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(red: 187/255, green: 42/255, blue: 97/255, alpha: 100)
 
+        self.navigationBarView.delegate = self
+
         let navBar = navigationBarView
         view.addSubview(navBar)
 
@@ -38,7 +40,11 @@ class ViewController: UIViewController {
         // safeAreaLayoutGuide will be under the status bar and the notch in the iPhone X
         Constraid.cup(navBar, byTopEdgeOf: view.safeAreaLayoutGuide).activate()
     }
+}
 
-
+extension ViewController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return UIBarPosition.topAttached
+    }
 }
 
