@@ -1,10 +1,9 @@
 import UIKit
-import Constraid
 
 class ViewController: UIViewController {
 
-    private let navigationBarView: NavigationBarView = {
-        let nav = NavigationBarView(frame: .zero)
+    private let navigationBarView: UINavigationBar = {
+        let nav = UINavigationBar(frame: .zero)
 
         // Add items to the left and right of the navigation bar.
         // This isn't necessary to do but we wanted you to see something expected in the navigation bar
@@ -13,7 +12,7 @@ class ViewController: UIViewController {
         let rightButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveClicked))
         navItem.leftBarButtonItem = leftButton
         navItem.rightBarButtonItem = rightButton
-
+      
         // Add navigation items to the bar
         nav.items = [navItem]
         return nav
@@ -32,13 +31,21 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.init(red: 187/255, green: 42/255, blue: 97/255, alpha: 100)
 
         let navBar = navigationBarView
+        self.navigationBarView.delegate = self
         view.addSubview(navBar)
 
-        // This sets the auto layout constraints to be within the safe area by setting the leading, top, and trailing constraints.
-        // safeAreaLayoutGuide will be under the status bar and the notch in the iPhone X
-        Constraid.cup(navBar, byTopEdgeOf: view.safeAreaLayoutGuide).activate()
+        navBar.translatesAutoresizingMaskIntoConstraints = false
+        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
     }
-
-
 }
 
+extension ViewController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        guard self.navigationBarView == bar as? UINavigationBar else {
+            return bar.barPosition
+        }
+        return UIBarPosition.topAttached
+    }
+}
